@@ -4,7 +4,7 @@ if (!token) { window.location.href='login.html'; }
 
 async function loadProgress(){
   try {
-    const res = await fetch('http://localhost:5000/api/progress', { headers:{ 'Authorization': token } });
+    const res = await fetch('https://flashcard-backend-cllv.onrender.com//api/progress', { headers:{ 'Authorization': token } });
     if (!res.ok) { document.getElementById('progressList').innerText = 'No progress yet'; return; }
     const data = await res.json();
     const el = document.getElementById('progressList'); el.innerHTML = '';
@@ -23,3 +23,4 @@ async function loadProgress(){
   } catch (e) { console.error(e); document.getElementById('progressList').innerText = 'Could not load progress'; }
 }
 loadProgress();
+
