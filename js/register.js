@@ -6,7 +6,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     const password = document.getElementById("password").value.trim();
 
     try {
-        const response = await fetch("https://flashcard-backend-cllv.onrender.com//api/auth/register", {
+        const response = await fetch("https://flashcard-backend-cllv.onrender.com/api/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,5 +28,6 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
         alert("Something went wrong while connecting to the server.");
     }
 });
+
 
 
