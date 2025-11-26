@@ -1,7 +1,7 @@
 // frontend/js/flashcards.js
 
 // Use relative paths so frontend + backend work on Render
-const API = "http://localhost:5000/api/flashcards";
+const API = "https://flashcard-backend-cllv.onrender.com//api/flashcards";
 const UPLOAD_API = "http://localhost:5000/api/upload/extract";
 
 // Retrieve token from localStorage
@@ -178,3 +178,4 @@ function escapeHtml(s){
                    .replace(/</g,'&lt;')
                    .replace(/>/g,'&gt;');
 }
+
