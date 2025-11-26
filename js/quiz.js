@@ -1,6 +1,6 @@
 // frontend/js/quiz.js
 // Simple MCQ quiz using user's flashcards or latest generated set
-const API = "http://localhost:5000/api/flashcards";
+const API = "https://flashcard-backend-cllv.onrender.com//api/flashcards";
 const QUIZ_API = "http://localhost:5000/api/quiz";
 const token = localStorage.getItem("token") || "";
 
@@ -175,3 +175,4 @@ document.addEventListener("keydown", (e)=> {
   if (e.key === "ArrowLeft") showPrev();
   if (e.key === "Enter") submitQuiz();
 });
+
