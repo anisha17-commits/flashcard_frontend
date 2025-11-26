@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quiz — Flashflow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Flashflow</div>
+    <nav>
+      <a class="navbtn" href="flashcards.html">Generate</a>
+      <a class="navbtn" href="view.html">Cards</a>
+      <a class="navbtn" href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="quiz-main">
+    <div class="quiz-controls">
+      <label>
+        Number of questions:
+        <select id="numQuestions">
+          <option>5</option>
+          <option>10</option>
+          <option>15</option>
+        </select>
+      </label>
+
+      <label>
+        Source:
+        <select id="sourceSelect">
+          <option value="generated">Latest generated</option>
+          <option value="saved">Your saved cards</option>
+        </select>
+      </label>
+
+      <button id="startQuizBtn" class="btn">Start Quiz</button>
+    </div>
+
+    <div id="quizArea" class="quiz-area hidden">
+      <div id="progress" class="quiz-progress">Question 1 / 5</div>
+
+      <div id="questionCard" class="question-card">
+        <div id="questionText" class="question-text">Question text</div>
+
+        <div id="options" class="options"></div>
+      </div>
+
+      <div class="quiz-actions">
+        <button id="prevQ" class="nav small">Prev</button>
+        <button id="nextQ" class="nav small">Next</button>
+        <button id="submitQuiz" class="btn primary">Submit Quiz</button>
+      </div>
+
+      <div id="resultArea" class="result-area hidden">
+        <h3 id="scoreHeading">Your score: 0 / 0</h3>
+        <div id="resultDetails"></div>
+        <button id="retryBtn" class="btn">Retry</button>
+        <button id="backBtn" class="btn secondary">Back to Cards</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="progressPopup" class="progress-popup">Card 1 of 1</div>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

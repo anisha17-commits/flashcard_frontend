@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Your Flashcards — Flashflow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Flashflow</div>
+    <nav>
+      <a class="navbtn" href="flashcards.html">Generate</a>
+      <a class="navbtn" href="dashboard.html">Dashboard</a>
+      <button id="themeToggle" class="navbtn">Theme</button>
+    </nav>
+  </header>
+
+  <main class="cards-page">
+    <div class="carousel-container">
+      <button id="prevBtn" class="nav-btn">❮</button>
+      <div id="carousel" class="carousel"></div>
+      <button id="nextBtn" class="nav-btn">❯</button>
+    </div>
+
+    <!-- modal for full card view -->
+    <div id="cardModal" class="modal" hidden>
+      <div class="modal-content">
+        <button id="closeModal" class="close">✕</button>
+        <div id="modalCard" class="card-3d">
+          <div class="inner">
+            <div class="face front" id="modalFront"></div>
+            <div class="face back" id="modalBack"></div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="ttsBtn" class="action-btn">🔊 Speak</button>
+          <button id="favBtn" class="action-btn">♡ Favorite</button>
+          <button id="saveBtn" class="action-btn">💾 Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="progressPopup" class="progress-popup">Card 1/1</div>
+  </main>
+
+  <script src="js/cards.js"></script>
+</body>
+</html>

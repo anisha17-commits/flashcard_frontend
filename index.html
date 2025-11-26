@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Flashflow — Smart Flashcards</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Flashflow</div>
+    <nav>
+      <a class="navbtn" href="login.html">Login</a>
+      <a class="navbtn" href="register.html">Register</a>
+      <a class="navbtn" href="flashcards.html">Generate</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <h1>Smart Flashcards — Faster Learning</h1>
+      <p>Create flashcards from PDFs and text, translate them, listen with text-to-speech, and test yourself with AI-style quizzes. Track progress and favorite your best cards.</p></br>
+      <div class="hero-ctas">
+        <a class="btn" href="register.html">Get started — it's free</a>
+        <a class="btn secondary" href="flashcards.html">Try generator</a>
+      </div>
+      <div class="features">
+        <div>📄 Upload & parse PDFs</div>
+        <div>🔊 Text-to-Speech</div>
+        <div>⭐ Save favorites</div>
+        <div>🌐 Translate to many languages</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Developer instruction: using local uploaded image path -->
+      <img id="heroImg" alt="hero" />
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>Made with ❤️ — Flashflow</div>
+  </footer>
+
+  <script>
+    // Developer request: use the uploaded local path as image url.
+    // This will be transformed by your environment. If serving statically, copy the image into /frontend/assets/hero.png
+    const HERO_LOCAL_PATH = '/mnt/data/A_2D_digital_image_presents_a_"Login_to_Account"_w.png';
+    document.getElementById('heroImg').src = HERO_LOCAL_PATH;
+    // If the above doesn't load in your environment, copy the file into frontend/assets/hero.png and set src to that.
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard — Flashflow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Flashflow</div>
+    <nav>
+      <span id="userName"></span>
+      <a class="navbtn" href="flashcards.html">Generate</a>
+      <a class="navbtn" href="view.html">Cards</a>
+      <a class="navbtn" href="progress.html">Progress</a>
+      <button class="navbtn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main style="padding:28px; max-width:1100px; margin:0 auto;">
+    <h2>Welcome back</h2>
+
+    <div class="container" style="display:flex;gap:12px;margin-bottom:18px;">
+      <a class="btn" href="flashcards.html">Create Flashcards</a>
+      <a class="btn secondary" href="view.html">Open Flashcards</a>
+      <a class="btn secondary" href="progress.html">View Progress</a>
+    </div>
+
+    <section>
+      <h3 style="margin-bottom:10px">Recent flashcards</h3>
+      <div id="recentCards" style="display:flex;gap:12px;flex-wrap:wrap;"></div>
+      <div style="margin-top:12px;color:rgba(255,255,255,0.7);font-size:13px">
+        Tip: click any preview card to open it in the viewer modal.
+      </div>
+    </section>
+  </main>
+
+  <div class="theme-toggle" id="themeToggle" style="position:fixed;right:18px;bottom:18px;padding:10px;border-radius:10px;cursor:pointer;">🌓</div>
+
+  <!-- Modern Flashcard Viewer Modal (AI Gradient Glass - Style B) -->
+  <div id="flashcardModal" class="ff-modal hidden" aria-hidden="true">
+    <div class="ff-modal-content scale-in" role="dialog" aria-modal="true" aria-labelledby="ffFront">
+      <button class="ff-close-btn" id="closeModal" aria-label="Close">✕</button>
+
+      <div class="ff-header" style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div class="ff-badge">Flashflow</div>
+        <div style="flex:1;font-weight:700;color:rgba(255,255,255,0.9)">Study Mode</div>
+        <div id="ffCardCounter" style="color:rgba(255,255,255,0.8)">0 / 0</div>
+      </div>
+
+      <div class="ff-card-display" id="ffCardDisplay" role="document">
+        <div id="ffFront" class="ff-face ff-front">Front</div>
+        <div id="ffBack" class="ff-face ff-back hidden">Back</div>
+      </div>
+
+      <div class="ff-controls" style="margin-top:16px">
+        <button id="ffPrev" class="ff-nav">❮ Prev</button>
+        <div style="display:flex;gap:10px">
+          <button id="ffFlip" class="ff-main">Flip</button>
+          <button id="ffSpeak" class="ff-main" title="Text to Speech">🔊</button>
+        </div>
+        <button id="ffNext" class="ff-nav">Next ❯</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- small progress toast -->
+  <div id="ffProgressPopup" class="ff-progress-popup">Card 1 of 1</div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+

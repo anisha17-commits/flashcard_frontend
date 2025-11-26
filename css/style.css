@@ -1,0 +1,165 @@
+/* frontend/css/style.css */
+:root{
+  --glass: rgba(255,255,255,0.04);
+  --text: #eaf4ff;
+  --accent1: #7c3aed;
+  --accent2: #06b6d4;
+}
+*{box-sizing:border-box}
+ body{
+  margin:0;
+  font-family:Inter,system-ui,Arial;
+  background-image:url('assets/bg.png');
+  background-size:cover;
+  background-position:center;
+  background-blend-mode:overlay;
+  background-color:#071022;
+  color:var(--text);
+}
+
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;backdrop-filter:blur(6px)}
+.brand{font-weight:700}
+.navbtn{color:var(--text);margin-right:12px;text-decoration:none;background:transparent;border:none;cursor:pointer}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021024;font-weight:700;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.form{padding:28px}
+.preview-card{color:var(--text)}
+
+/* --------------- New Modal / Card Styles (AI Gradient Glass - Style B) --------------- */
+
+/* utility hidden class (used by scripts) */
+.hidden { display: none !important; }
+
+/* modal backdrop & layout */
+.ff-modal {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.75));
+  backdrop-filter: blur(10px) saturate(120%);
+  z-index: 9999;
+}
+
+/* modal container */
+.ff-modal-content {
+  width: 560px;
+  max-width: 94%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), opacity .25s;
+}
+
+/* small header badge */
+.ff-badge{
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#021024;
+  padding:6px 10px;
+  border-radius:10px;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(124,58,237,0.12);
+}
+
+/* show animation */
+.scale-in { transform: scale(0.98); opacity: 0; animation: scaleIn 260ms forwards; }
+@keyframes scaleIn { to { transform: scale(1); opacity: 1; } }
+
+/* card display area (glass) */
+.ff-card-display {
+  min-height: 200px;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* faces */
+.ff-face {
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  font-size:18px;
+  line-height:1.3;
+  color: #fff;
+}
+
+/* front / back styles */
+.ff-front {
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: var(--text);
+  font-weight:700;
+}
+.ff-back {
+  background: linear-gradient(135deg, rgba(3,7,20,0.85), rgba(0,0,0,0.7));
+  color: #fff;
+}
+
+/* Controls */
+.ff-controls { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px }
+.ff-nav, .ff-main {
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+}
+.ff-nav {
+  background: rgba(255,255,255,0.04);
+  color:var(--text);
+}
+.ff-main {
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#021024;
+  box-shadow: 0 8px 30px rgba(124,58,237,0.12);
+}
+
+/* close button */
+.ff-close-btn{
+  position:absolute;right:12px;top:12px;padding:8px 10px;border-radius:10px;border:none;background:rgba(255,255,255,0.03);color:var(--text);cursor:pointer;
+}
+
+/* tiny counter */
+#ffCardCounter { font-size:13px; color:rgba(255,255,255,0.8); }
+
+/* progress toast */
+.ff-progress-popup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color: #021024;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(124,58,237,0.12);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .22s, transform .22s;
+}
+.ff-progress-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive tweaks */
+@media (max-width: 720px){
+  .ff-modal-content { width: 95%; padding:14px; }
+  .ff-card-display { min-height: 160px; padding:12px; }
+}
+

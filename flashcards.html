@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Generate Flashcards — Flashflow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Flashflow</div>
+    <nav>
+      <a class="navbtn" href="dashboard.html">Home</a>
+      <a class="navbtn" href="view.html">Cards</a>
+    </nav>
+  </header>
+
+  <main class="form" style="max-width:880px;margin:28px auto;">
+    <h2>Generate Flashcards</h2>
+
+    <label>Paste plain text (or upload a PDF or TXT below)</label>
+    <textarea id="content" placeholder="Paste article, notes, or topic..." ></textarea>
+
+    <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+      <select id="targetLang" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);color:white;">
+        <option value="auto">No translate (keep original)</option>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="hi">Hindi</option>
+      </select>
+      <button id="genBtn" class="btn">Generate</button>
+      <button id="saveAll" class="btn secondary" disabled>Save All (to DB)</button>
+    </div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)">
+
+    <label>Upload PDF or TXT</label>
+    <input id="fileInput" type="file" accept=".pdf,.txt" />
+    <div style="margin-top:12px">
+      <button id="uploadBtn" class="btn">Upload & Extract</button>
+    </div>
+
+    <label style="display:block;margin-top:16px">Preview (generated cards)</label>
+    <div id="flashcardsPreview" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px"></div>
+  </main>
+
+  <script src="js/flashcards.js"></script>
+</body>
+</html>
+
+
+
+
