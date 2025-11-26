@@ -1,5 +1,5 @@
 // frontend/js/cards.js
-const API = "http://localhost:5000/api/flashcards";
+const API = "https://flashcard-backend-cllv.onrender.com//api/flashcards";
 const token = localStorage.getItem("token");
 
 const carousel = document.getElementById("carousel");
@@ -149,3 +149,4 @@ document.getElementById("carousel").addEventListener("touchend", e=>{
   if (dx < -60) slide(1);
   else if (dx > 60) slide(-1);
 });
+
